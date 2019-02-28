@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Document</title>
+</head>
+<style>
+ .menu-wrap {
+  position: relative;
+  width: 100px;
+}
+.menu-title {
+  width: 100%;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.menu-wrap.active .menu {
+  visibility: visible;
+  opacity: 1;
+}
+.menu {
+  border: 1px solid black;
+  border-top: none;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  margin-left:20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+ 
+  padding: 0;
+}
+li:hover {
+  cursor: pointer;
+  background: #eee;
+}
+</style>
+<body>
+    <div class="menu-wrap">
+        <div class="menu-title">
+          menu toogle
+        </div>
+        <div class="menu">
+          <ul id="a">
+            <li id="b">red</li>
+            <li id="c">blue</li>
+            <li id="d">green</li>
+          </ul>
+        </div>
+      </div>
+ 
+    
+ 
+
+</body>
+
+<script>
+    $(document).ready(function () {
+ $(function() {
+  $('.menu-wrap').on('mousedown', function(ev) {
+      if(ev.which==3){
+    var $this = $(this);
+    if ($this.hasClass('active')) {
+      $this.removeClass('active');
+      $(document).off('click.menu');
+
+    } else {
+      $this.addClass('active');
+      $(document).on('click.menu', function(e) {
+        if ($(e.target).closest('.menu-wrap').length === 0) {
+          $('.menu-wrap').removeClass('active');
+          $(document).off('click.menu');
+
+        }
+      });
+    }
+      }
+  });
+});
+
+$("#b").click(function(){
+$(".menu-title").css("background-color", "red");
+ 
+          $(document).off('.menu');
+
+        
+      
+});
+$("#c").click(function(){
+$(".menu-title").css("background-color", "blue");
+
+});
+$("#d").click(function(){
+$(".menu-title").css("background-color", "green");
+
+});
+    });
+</script>
+
+</html>

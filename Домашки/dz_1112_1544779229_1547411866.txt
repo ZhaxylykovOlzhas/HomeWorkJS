@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Изучаем Vue.js</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            <textarea name="" id="" cols="30" rows="10" v-model="text"></textarea>
+        </p>
+        <p>{{text|capitalize}}</p>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: ''
+            },
+            filters: {
+                capitalize: function (value) {
+                    if (!value) return ''
+                    value = value.toString()
+                    return value.charAt(0).toUpperCase() + value.slice(1)
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>

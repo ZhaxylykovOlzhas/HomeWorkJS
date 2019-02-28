@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+//  ---------------------------------------------
+    // function FirstFunction(List) {
+    //   for (var i = 0; i < List.length; i++) {
+    //     if (List[i].bought == false)
+    //       alert(List[i].name + ' ' + List[i].count + ' ' + List[i].bought);
+    //   }
+    //   for (var i = 0; i < List.length; i++) {
+    //     if (List[i].bought == true)
+    //       alert(List[i].name + ' ' + List[i].count + ' ' + List[i].bought);
+    //   }
+    // }
+    //
+    // function SecondFunction(arr, productName) {
+    //   g = 0
+    //   for (var i = 0; i < arr.length; i++) {
+    //     if (arr[i].name == productName) {
+    //       arr[i].count++;
+    //       g++;
+    //     }
+    //   }
+    //   if (g == 0) {
+    //     arr[arr.length] = {
+    //       name: productName,
+    //       count: "1",
+    //       bought: false
+    //     }
+    //   }
+    // }
+    //
+    // function ThirdFunction(arr, productName) {
+    //   for (var i = 0; i < arr.length; i++) {
+    //     if (arr[i].name == productName) {
+    //       arr[i].bought = true;
+    //     }
+    //   }
+    //
+    // }
+    //
+    // var arrObjects = []
+    // arrObjects[0] = {
+    //   name: "apple",
+    //   count: 12
+    //   bought: true
+    // }
+    // arrObjects[1] = {
+    //   name: "biscuit",
+    //   count: 2,
+    //   bought: true
+    // }
+    // arrObjects[2] = {
+    //   name: "paper",
+    //   count: 9,
+    //   bought: false
+    // }
+    // arrObjects[3] = {
+    //   name: "water",
+    //   count: 5,
+    //   bought: false
+    // }
+    // ThirdFunction(arrObjects, "paper");
+    // SecondFunction(arrObjects, "juice");
+    // FirstFunction(arrObjects);
+
+//  ---------------------------------------------
+   //  var arrObjects = []
+   //  arrObjects[0] = {
+   //    name: "apple",
+   //    count: 2,
+   //    cost: 50
+   //  }
+   //  arrObjects[1] = {
+   //    name: "biscuit",
+   //    count: 1,
+   //    cost: 100
+   //  }
+   //  arrObjects[2] = {
+   //    name: "paper",
+   //    count: 9,
+   //    cost: 10
+   //  }
+   //  arrObjects[3] = {
+   //    name: "water",
+   //    count: 5,
+   //    cost: 150
+   //  }
+   //
+   //  function FirstFunction(arr) {
+   //
+   //    for (i = 0; i < arr.length; i++) {
+   //      alert(arr[i].name + " " + arr[i].count + " " + arr[i].cost);
+   //
+   //    }
+   //
+   //  }
+   //
+   //  function SecondFunction(arr) {
+   //    sum = 0
+   //    for (i = 0; i < arr.length; i++) {
+   //      sum = sum + arr[i].cost;
+   //
+   //    }
+   //    alert(sum);
+   //  }
+   //
+   //  function ThirdFunction(arr) {
+   //    max = 0
+   //    for (i = 0; i < arr.length; i++) {
+   //      if (arr[i].cost > max) {
+   //        max = arr[i].cost;
+   //        name=arr[i].name;
+   //      }
+   //
+   //    }
+   //    alert(name+" "+max);
+   //  }
+   //  function FourthFunction(arr) {
+   //    sum = 0
+   //    for (i = 0; i < arr.length; i++) {
+   //      sum = sum + arr[i].cost;
+   //
+   //    }
+   //    alert(sum/arr.length);
+   //  }
+   //  // FirstFunction(arrObjects);
+   //  // SecondFunction(arrObjects);
+   //  // ThirdFunction(arrObjects);
+   // FourthFunction(arrObjects);
+
+
+//  ---------------------------------------------
+  //  var arrObjects = []
+  //  arrObjects[0] = {
+  //    name: "color",
+  //    description: "dxfcvsdcvs"
+  //  }
+  //  arrObjects[1] = {
+  //    name: "font - size",
+  //    description: "dxfcvsdcvs"
+  //  }
+  //  arrObjects[2] = {
+  //    name: "font",
+  //    description: "dxfcvsdcvs"
+  //  }
+  //  arrObjects[3] = {
+  //    name: "align",
+  //    description: "dxfcvsdcvs"
+  //  }
+  //
+  //  function FirstFunction(arr,text){
+  // document.write( "arr[0].name: green; arr[1].name:12;arr[3].name:center">text);
+  //  }
+  //
+  //  FirstFunction(arrObjects,"afdfasdfsdfsdfs");
+
+//  ---------------------------------------------
+  var arrObjects = []
+  arrObjects[0] = {
+    name: "123",
+    count: 12,
+    fac: "FIT"
+  }
+  arrObjects[1] = {
+    name: "126",
+    count: 15,
+    fac: "VMM"
+  }
+  arrObjects[2] = {
+    name: "128",
+    count: 17,
+    fac: "FIT"
+  }
+  arrObjects[3] = {
+    name: "125",
+    count: 11,
+    fac: "VMM"
+  }
+
+  Group = {
+    name: "125",
+    count: 12,
+    fac: "FIT"
+
+  }
+
+  function FirstFunction(List) {
+    for (var i = 0; i < List.length; i++) {
+        alert(List[i].name + ' ' + List[i].count + ' ' + List[i].fac);
+    }
+  }
+  function SecondFunction(List) {
+    for (var i = 0; i < List.length; i++) {
+      if(List[i].fac== "FIT")
+        alert(List[i].name + ' ' + List[i].count + ' ' + List[i].fac);
+    }
+  }
+  function ThirdFunction(List,Group) {
+    for (var i = 0; i < List.length; i++) {
+        if(List[i].fac == Group.fac &&  List[i].count>= Group.count)
+        alert(List[i].name + ' ' + List[i].count + ' ' + List[i].fac);
+    }
+  }
+
+  // ThirdFunction(arrObjects,Group)
+
+
+  </script>
+</body>
+
+</html>

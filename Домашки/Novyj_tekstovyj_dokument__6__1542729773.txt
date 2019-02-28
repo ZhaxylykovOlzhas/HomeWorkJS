@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" width="100px" class="text">
+<input type="radio" id="contactChoice1" name="contact" value="your_phone" >
+<label for="contactChoice1">Номер телефона</label>
+<input type="radio" id="contactChoice2" name="contact" value="your_name">
+<label for="contactChoice2">Имя</label>
+<input type="radio" id="contactChoice3" name="contact" value="your_name">
+<label for="contactChoice3">MAC-adress</label>
+
+
+<script>
+
+$(document).ready(function() {
+  $("#contactChoice1").click(function() {
+    var z = $(".text").val();
+    if(!/^[0-9]+$/.test(z)){
+      alert("Please only enter numeric characters (Allowed input:0-9)")
+    }
+  });
+
+
+  $("#contactChoice2").click(function() {
+    var z = $(".text").val();
+    if(!/^[a-zа-яё]+$/.test(z)){
+      alert("Please only enter letters")
+    }
+  });
+ 
+ 
+$("#contactChoice3").click(function() {
+  var z = $(".text").val();
+  if(! /^([\d[A-F]{2}:){5}[\d[A-F]{2}$/.test(z)){
+    alert("Please only enter for example(00:11:22:33:44:55)")
+  }
+});
+
+
+});
+
+
+
+</script>
+
+</body>
+</html>

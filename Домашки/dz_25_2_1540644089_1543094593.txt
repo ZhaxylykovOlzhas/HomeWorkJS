@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<script>
+  $(document).ready(function() {
+    number = Math.random();
+
+    function randomNumber(min, max) {
+      var random = Math.floor((Math.random() * (max - min) + min)) / 100;
+    }
+
+    var table = document.createElement('table');
+    for (let i = 0; i < 2; i++) {
+      var tr = document.createElement('tr');
+      for (let j = 0; j < 5; j++) {
+        var td = document.createElement('td');
+        td.innerHTML = Math.floor((Math.random() * 100) + 1);
+        tr.appendChild(td)
+      }
+      table.appendChild(tr)
+    }
+    document.body.appendChild(table)
+
+    $(td).click(function() {
+      var prev = $(this).prev();
+      var next = $(this).next();
+      var text = ParseInt(prev.text()) + ParseInt(next.text());
+      $(this).innerHTML = text;
+    });
+
+ $("#a").click(function() {
+ 
+  var a = parseInt($("#c").val());
+  a++;
+  document.getElementById("c").setAttribute('value',a)
+ 
+  });
+
+
+  $("#b").click(function() {
+   
+  var a = parseInt($("#c").val());
+  a--;
+  document.getElementById("c").setAttribute('value',a)
+   });
+
+   
+  });
+</script>
+
+<body>
+<input   type="text" id="c"  value="1">
+<button id="a"  >Больше</button>
+<button id="b" onclick="changeMin()">Меньше</button>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+﻿var fs = require('fs');
+var path = require('path');
+
+var nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  secure: false,
+  port: 25,
+  auth: {
+    user: 'aknurtazhibek@gmail.com',/*логин*/
+    pass: '*******' /*пароль*/
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
+});
+
+let HelperOptions = {
+  from: '"Tazhibek Aknur" <aknurtazhibek@gmail.com',
+  to: 'realibi@gmail.com',
+  subject: 'HW',
+  text: 'message'
+};
+
+transporter.sendMail(HelperOptions, (error, info)=> {
+  if(error){
+    return console.log(error);
+  }
+  console.log("Письмо было отправлено!");
+  console.log(info);
+});

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Document</title>
+</head>
+<script>
+var Computer={
+    name:"WIN-1231",
+    proc : 50,
+    memory: '8gb',
+    system:64,
+    version:"10",
+    codeProduct:"2323546",
+    definition:"abcd",
+    group:"WORKGROUP",
+    score:2.8,
+    powerSupply:500
+    
+
+}
+</script>
+
+<body>
+      
+                 
+                <input   type="checkbox"   name="name" /><label>WIN-1231</label>
+                <input   type="checkbox"  name="proc" /><label>50</label>
+                <input   type="checkbox"  name="memory" /><label>8gb</label>
+                <input   type="checkbox"  name="system" /><label>64</label>
+                <input   type="checkbox"  name="version" /><label>10</label>
+                <input   type="checkbox"  name="codeProduct" /><label>2323546</label>
+                <input   type="checkbox"  name="definition" /><label>abcd</label>
+                <input   type="checkbox"  name="group" /><label>WORKGROUP</label>
+                <input   type="checkbox"  name="score" /><label>2.8</label>
+                <input   type="checkbox"  name="powerSupply" /><label>500</label>
+            <button id="button">JSON</button>
+    
+</body>
+<script>
+    $(document).ready(function () {
+ var selected = [];
+$("input").on('click', function(){
+   name1=$(this).attr('name');
+      Computer.name1 =  $(this).next('label').text();
+    console.log(Computer.name1);
+    selected.push(name1);
+    console.log(selected);
+})
+
+$("button").click(function(){
+    var json = JSON.stringify(Computer, selected )
+    console.log(json);
+
+});
+         
+  
+ 
+
+    });
+
+</script>
+</html>

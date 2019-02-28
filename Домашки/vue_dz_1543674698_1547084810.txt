@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Изучаем Vue.js</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            <label for="name">Name: </label>
+            <input type="text" v-model="name" id="n" />
+            <label for="email">Email: </label>
+            <input type="text" v-model="email" id="e" />
+            <label for="phone">Phone: </label>
+            <input type="text" v-model="phone" id="p" />
+            <br>
+            <br>
+            <button v-on:click="add();name='';email='';phone='';">Добавить</button>
+        </p>
+        <ul>
+            <li v-for="(phone, index) in phones">
+                <p>{{ phone.name }} {{ phone.email }} {{ phone.phone }} </p>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: '',
+                email: '',
+                phone: '',
+                phones: []
+            },
+            methods: {
+                add: function () {
+                    if (this.name.length != 0 && this.email.length != 0 && this.phone.length != 0) {
+                        document.getElementById("n").style.borderColor = "black";
+                        document.getElementById("e").style.borderColor = "black";
+
+                        document.getElementById("p").style.borderColor = "black";
+
+                        this.phones.push({ name: this.$options.filters.capitalize(this.name), email: this.$options.filters.capitalize(this.email), phone: this.$options.filters.capitalize(this.phone) });
+                    }
+
+
+                    if (this.name.length == 0 && this.email.length == 0 && this.phone.length == 0) {
+                        document.getElementById("n").style.borderColor = "red";
+                        document.getElementById("e").style.borderColor = "red";
+                        document.getElementById("p").style.borderColor = "red";
+
+                    }
+                }
+            },
+            filters: {
+                capitalize: function (value) {
+                    if (!value) return ''
+                    value = value.toString()
+                    return value.charAt(0).toUpperCase() + value.slice(1)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
